@@ -30,7 +30,7 @@ Workflow orchestration: Prefect
 
 Clone the repository:
 
-git clone https://github.com/yourusername/architectural-styles-nlp.git
+git clone https://github.com/AnissaKerouaz/Web-Scraping-and-NLP-Analysis-of-Architectural-Styles.git
 cd architectural-styles-nlp
 
 
