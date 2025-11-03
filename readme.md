@@ -1,37 +1,37 @@
-# 🏛️ Wikipedia Architectural Styles Scraper
+# 🏛️ Web Scraping & NLP Analysis of Architectural Styles
 
-Ever wondered how architectural styles are connected? This little Python project scrapes Wikipedia to collect article titles, URLs, full text, and categories for architectural styles — turning scattered pages into structured, analyzable data.
+A Python project that scrapes Wikipedia to collect and analyze architectural styles using text mining and NLP techniques. This pipeline turns raw articles into structured data and visual insights.
 
 ## What It Does
 
- Gathers all Wikipedia articles under the Architectural Styles category
+- Scrapes Wikipedia: Extracts titles, URLs, and full text of articles on architectural styles
 
- Fetches full article text and categories
+- Text Processing & NLP: Uses TF-IDF and other NLP methods to explore linguistic and thematic similarities
 
- Handles multiple pages automatically
+- Automated & Reproducible: Logging, retries, Parquet storage, and workflow orchestration with Prefect
 
- Logs activity, retries failed requests, and respects polite delays
-
- Saves everything neatly in CSV and Parquet files for easy use
+- Visualizations: Generates plots with Matplotlib and Seaborn to highlight patterns and insights
 
 ## Tech & Tools
 
 Python
 
-requests + BeautifulSoup for scraping
+pandas, BeautifulSoup, requests, tqdm
 
-pandas for data wrangling
+NLP: TF-IDF, NLTK, wordcloud
 
-tqdm for progress bars
+Data validation & testing: pandera, pytest
 
-pyarrow for Parquet storage
+Visualization: matplotlib, seaborn
 
-## How to Use
+Workflow orchestration: Prefect
 
-Clone this repo:
+## How to Run
 
-git clone https://github.com/yourusername/architectural-styles-scraper.git
-cd architectural-styles-scraper
+Clone the repository:
+
+git clone https://github.com/yourusername/architectural-styles-nlp.git
+cd architectural-styles-nlp
 
 
 Install dependencies:
@@ -39,11 +39,16 @@ Install dependencies:
 pip install -r requirements.txt
 
 
-Run the scraper:
-Collect article titles and URLs:
-python titles_urls.py  
-Fetch full text and categories:
-python text_metadata.py 
+Run the scraper and metadata fetcher:
+
+python titles_urls.py   # Scrape article titles and URLs
+python text_metadata.py # Fetch full text and categories
 
 
-Check the data/ folder for your outputs.
+Visualizations and processed data will be available in the data/ and visualizations/ folders.
+
+## Notes
+
+The scraper includes polite delays and retries to avoid overloading Wikipedia servers.
+
+Configurations for start URL, headers, and output paths can be updated in config.py.
